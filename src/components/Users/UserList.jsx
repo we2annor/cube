@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { BsPencil } from "react-icons/bs";
-import { FaCaretUp } from "react-icons/fa";
-import { FaCaretDown } from "react-icons/fa";
-import { FaCaretRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { fetchUsers } from "../../actions";
 import HighestScorers from "../HighestScorers";
+import { sortUsers, getPrefix, getUserStatus } from "../../utilities/utils";
 import "../../styles/component/UserList.scss";
 
 const UserList = ({ fetchUsers, users }) => {
@@ -27,60 +25,8 @@ const UserList = ({ fetchUsers, users }) => {
     </div>
   );
 
-  const getPrefix = (rank) => {
-    let prefix = "";
-    switch (true) {
-      case rank === 1:
-        prefix = "st";
-        break;
-      case rank === 2:
-        prefix = "nd";
-        break;
-      case rank === 3:
-        prefix = "rd";
-        break;
-      case rank >= 3:
-        prefix = "th";
-        break;
-      default:
-        return;
-    }
-    return prefix;
-  };
-
-  const getUserStatus = (status) => {
-    if (!status) {
-      status = "No change";
-    }
-    let content;
-    if (status === "No change") {
-      content = (
-        <div className='user-status right-arrow'>
-          <FaCaretRight className='arrow' />
-          {status}
-        </div>
-      );
-    } else if (status === "Moved up") {
-      content = (
-        <div className='user-status up-arrow'>
-          <FaCaretUp className='arrow' />
-          {status}
-        </div>
-      );
-    } else {
-      content = (
-        <div className='user-status down-arrow'>
-          <FaCaretDown className='arrow' />
-          {status}
-        </div>
-      );
-    }
-
-    return content;
-  };
-
   const renderUsers = () => {
-    return users.map((user, index) => (
+    return sortUsers(users).map((user, index) => (
       <div className='container' key={index}>
         <div className='item rank'>
           {index + 1}
