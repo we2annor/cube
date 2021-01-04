@@ -1,0 +1,15 @@
+.app {
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+
+    .title {
+        text-align: center;
+        padding: 4rem 0;
+        font-size: 3.4rem;
+
+        span {
+            color: #f1de2d;
+        }
+    }
+}

@@ -1,0 +1,100 @@
+@import '../variables.scss';
+
+.leaders-table {
+    border-radius: 1rem;
+    border: 1px solid #f8f8f8;
+    background-color: $primary-color;
+    padding: 2rem;
+
+    .header {
+        position: relative;
+        padding: 2rem 0;
+
+        h3 {
+            display: inline-block;
+            padding: 2rem;
+            font-size: 2.6rem;
+        }
+
+        .add-score {
+            display: inline-block;
+            right: 0;
+            bottom: 1rem;
+            padding: 1rem;
+            position: absolute;
+
+            a {
+                border: 1px solid $secondary-color-border-line;
+                padding: 1rem;
+                border-radius: .5rem;
+                background-color: $secondary-color;
+                color: $primary-color;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .list {
+
+        .container {
+            border: 1px solid #fdfdfd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: nowrap;
+
+            .item {
+                padding: 1rem;
+            }
+
+            .edit {
+               padding: 1rem 2rem;
+            }
+
+            .rank {
+                padding: 1rem 2rem;
+            }
+
+            .avatar {
+                flex: 1;
+                img {
+                    border: 1px solid #aaa8a8;
+                    width: 80%;
+                    height: 80%;
+                    margin: 0 auto;
+                    border-radius: .4rem;
+                    background-color: $grey-border-line;
+                }
+            }
+
+            .score {
+                flex: 1;
+            }
+
+            .name {
+                flex: 5;
+            }
+
+            .arrow {
+                position: relative;
+                text-align: center;
+                padding: 0 .5rem;
+                margin-right: 1rem;
+                top: .4rem;
+            }
+
+
+            &.right-arrow {
+                color: #e2e207;
+            }
+
+            &.up-arrow {
+                color: green;
+            }
+
+            &.down-arrow {
+                color: red;
+            }
+        }
+    }
+}

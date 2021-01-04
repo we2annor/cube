@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.highest-scorers {
+    border: 1px solid $secondary-color-border-line;
+    border-radius: 1rem;
+    background-color: $secondary-color;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    color: $primary-color;
+}
